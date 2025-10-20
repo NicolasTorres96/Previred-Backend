@@ -1,0 +1,73 @@
+{
+  "info": {
+    "name": "Previred Person CRUD API",
+    "_postman_id": "previred-crud-2025-10-20",
+    "description": "Colección para probar el CRUD de personas (Previred). Usa {{baseUrl}}.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Crear persona",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"rut\": \"12.345.678-5\",\n  \"nombre\": \"Ada\",\n  \"apellido\": \"Lovelace\",\n  \"fechaNacimiento\": \"1990-10-01\",\n  \"calle\": \"Av. Providencia 120\",\n  \"comuna\": \"Santiago\",\n  \"region\": \"Metropolitana\"\n}"
+        },
+        "url": "{{baseUrl}}/api/v1/personas"
+      }
+    },
+    {
+      "name": "Listar personas",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/v1/personas"
+      }
+    },
+    {
+      "name": "Obtener persona por ID",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/v1/personas/{{id}}"
+      }
+    },
+    {
+      "name": "Actualizar persona",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"rut\": \"12.345.678-5\",\n  \"nombre\": \"Ada Actualizada\",\n  \"apellido\": \"Lovelace\",\n  \"fechaNacimiento\": \"1990-10-01\",\n  \"calle\": \"Nueva Calle 456\",\n  \"comuna\": \"Las Condes\",\n  \"region\": \"Metropolitana\"\n}"
+        },
+        "url": "{{baseUrl}}/api/v1/personas/{{id}}"
+      }
+    },
+    {
+      "name": "Eliminar persona",
+      "request": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/api/v1/personas/{{id}}"
+      }
+    }
+  ]
+}
